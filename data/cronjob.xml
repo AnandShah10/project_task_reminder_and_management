@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record id="deadline_cron" model="ir.cron">
+            <field name="name">deadline</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="state">code</field>
+            <field name="code">model.send_email_reminder()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>
+        <record id="daily_timesheet_entries_cron" model="ir.cron">
+            <field name="name">Daily Timesheet timesheet</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="state">code</field>
+            <field name="code">model.send_daily_timesheet_entries()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>
